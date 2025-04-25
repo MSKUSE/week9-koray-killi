@@ -1,49 +1,21 @@
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Drawable{
+    int sideA = 0;
+    int sideB = 0;
 
-    private int sideA, sideB;
-
-    public Rectangle(){
-        super();
-    }
-    public Rectangle(String color, int sideA, int sideB){
+    public Rectangle(String color, int sideB, int sideA) {
         super(color);
-        this.sideA = 1;
-        this.sideB = 1;
-    }
-
-    public int getSideA() {
-        return sideA;
-    }
-
-    public void setSideA(int sideA) {
-        this.sideA = sideA;
-    }
-
-    public int getSideB() {
-        return sideB;
-    }
-
-    public void setSideB(int sideB) {
         this.sideB = sideB;
-    }
-
-    @Override
-    public double area() {
-        return sideA * sideB;
+        this.sideA = sideA;
     }
 
     @Override
     public double perimeter() {
-        return 2*(sideA + sideB);
+        return 2*(this.sideA + this.sideB);
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
-                " Rectangle{" +
-                "sideA=" + sideA +
-                ", sideB=" + sideB +
-                '}';
+    public double area() {
+        return sideA*sideB;
     }
 
     @Override
@@ -54,4 +26,8 @@ public class Rectangle extends Shape{
         return sideA == rectangle.sideA && sideB == rectangle.sideB;
     }
 
+    @Override
+    public void draw() {
+        System.out.println("Rectangle is drawn.");
+    }
 }

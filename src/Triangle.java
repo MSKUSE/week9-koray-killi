@@ -2,9 +2,6 @@ public class Triangle extends Shape {
 
 
     private  int sideA, sideB, sideC;
-    public Triangle(){
-        super();
-    }
     public Triangle(String color, int sideA, int sideB, int sideC){
         super(color);
         this.sideA = sideA;
